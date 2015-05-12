@@ -3,12 +3,8 @@ class LinksController < ApplicationController
   	@links = Link.all
   end
 
-  def new
-  	@link = Link.new
-  end
-
   def create(link_params)
-  	@link = Link.create(link_params)
+  	Link.create(link_params)
   	redirect_to root_path
   end
 

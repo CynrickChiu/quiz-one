@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to new_link_path do %>
+          <%= link_to new_link_path, :data => {:toggle => 'modal', :target => '#myModal'} do %>
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
             Submit a Link
           <% end %>
@@ -35,6 +35,29 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Submit a Link</h4>
+      </div>
+      <%= simple_form_for Link.new do |f| %>
+        <div class="modal-body">
+          <%= f.input :title %>
+          <br />
+          <%= f.input :url %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <div class="text-center app-title">
   <h1>Basic Link Aggregator</h1>
