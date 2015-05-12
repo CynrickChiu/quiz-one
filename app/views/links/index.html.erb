@@ -1,7 +1,7 @@
-<div class="col-xs-10 col-xs-offset-1 link-box">
-  <ul>
-  <% @links.each do |link| %>
-    <li><%= link_to link.title, link.url %> [<%= link.url %>]</li>
-  <% end %>
-  </ul>
-</div>
+<% @links.each do |link| %>
+  <div class="col-xs-10 col-xs-offset-1 link-box">
+    <ul>
+      <li><%= link_to link.title, link.url %>&nbsp;&nbsp;[ <%= link.url %> ]</li> 
+    </ul>
+  </div>
+<% end %>

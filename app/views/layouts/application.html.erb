@@ -59,6 +59,19 @@
   </div>
 </div>
 
+<% if flash[:success].present? %>
+  <div class="col-xs-10 col-xs-offset-1 alert alert-success">
+    <%= flash[:success] %>
+  </div>
+  <br class="clear-both" />
+<% end %>
+<% if flash[:error].present? %>
+  <div class="col-xs-10 col-xs-offset-1 alert alert-danger">
+    <%= flash[:error] %>
+  </div>
+  <br class="clear-both" />
+<% end %>
+
 <div class="text-center app-title">
   <h1>Basic Link Aggregator</h1>
 </div>
