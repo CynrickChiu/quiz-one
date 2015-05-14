@@ -1,1 +1,1 @@
-### Quiz 1 for Firehose Project
+### Quiz for Firehose Project
